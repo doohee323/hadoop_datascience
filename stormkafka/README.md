@@ -11,9 +11,9 @@ persistence - SOLR bolt, MongoDB bolt or HDFS bolt.
 
 < run in vagrant >
 ```
-cd /stormkafka
-vagrant up # vagrant destory -f
-vagrant ssh
+cd ./stormkafka
+vagrant up # vagrant reload # vagrant destory -f
+vagrant ssh 
 
 run apps according to /stormkafka/scripts/stormkafka_test.sh.
 
