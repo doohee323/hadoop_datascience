@@ -15,9 +15,10 @@ cd /stormkafka
 vagrant up # vagrant destory -f
 vagrant ssh
 
-run apps according to /stormkafka/scripts/stormkafka.sh's 134 line.
+run apps according to /stormkafka/scripts/stormkafka_test.sh.
 
 http://192.168.82.150:8080
 http://192.168.82.150:8983/solr/#/collection1/query
+http://192.168.82.150:50070/explorer.html#/from_storm
 ```
 
