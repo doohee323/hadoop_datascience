@@ -65,15 +65,28 @@ storm jar target/stormkafka-0.0.1-SNAPSHOT.jar com.vishnu.storm.Topology
 # http://192.168.82.150:8080/index.html
 
 echo ### [test topology] ############################################################################################################
+# 1) with  kafka-console-producer.sh
 cd $HOME/kafka
 bin/kafka-console-consumer.sh --zookeeper 192.168.82.150:2181 --topic incoming --from-beginning
 
 bin/kafka-console-producer.sh --topic incoming --broker 192.168.82.150:9092
-hdfs this message goes to hdfs
-mongo id:1 value:mongodb_message
 solr id:1 value:solr_message
 solr id:2 value:solr_message
+hdfs this message goes to hdfs
+mongo id:1 value:mongodb_message
 
 #hdfs -> http://192.168.82.150:50070/explorer.html#/from_storm
 #solr -> http://192.168.82.150:8983/solr/#/collection1/query
+
+# 2) with java
+cd /vagrant
+vi pom.xml
+comment like this
+<!-- 			<scope>provided</scope> -->
+cd /vagrant
+mvn clean package
+
+java -cp target/stormkafka-0.0.1-SNAPSHOT.jar com.vishnu.kafka.ProducerTestKafka solr
+java -cp target/stormkafka-0.0.1-SNAPSHOT.jar com.vishnu.kafka.ProducerTestKafka hdfs
+
 
