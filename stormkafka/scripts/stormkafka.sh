@@ -25,6 +25,7 @@ apt-get install maven -y
 #apt-get purge maven2 -y
 
 echo '' >> $HOME/.bashrc
+echo 'export HOME=/vagrant/servers' >> $HOME/.bashrc
 echo 'export PATH=$PATH:.:$HOME/apache-storm-0.10.0/bin' >> $HOME/.bashrc
 echo 'export JAVA_HOME='$JAVA_HOME >> $HOME/.bashrc
 echo 'export HADOOP_PREFIX=/home/vagrant/hadoop-2.7.2' >> $HOME/.bashrc
